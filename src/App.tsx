@@ -21,6 +21,24 @@ const songs: Song[] = [
     coverUrl: "/burning_heart.jpg",
     musicUrl: "/maou_08_burning_heart.mp3",
   },
+  {
+    title: "12345",
+    artist: "Mary",
+    coverUrl: "/12345.jpg",
+    musicUrl: "/maou_19_12345.mp3",
+  },
+  {
+    title: "ハルジオン",
+    artist: "KEI",
+    coverUrl: "/halzion.jpg",
+    musicUrl: "/maou_05_halzion.mp3",
+  },
+  {
+    title: "Bipolar Disorder Outside ver.",
+    artist: "森田交一",
+    coverUrl: "/Bipolar Disorder Outside ver.jpg",
+    musicUrl: "/maou_40_bipolar_disorder_outside_ver.mp3",
+  },
 ];
 
 function App() {
