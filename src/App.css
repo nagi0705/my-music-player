@@ -1,9 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Edu+Australia+VIC+WA+NT+Hand+Dots&display=swap');
-
 body {
   margin: 0;
-  font-family: 'Edu Australia VIC WA NT Hand Dots', sans-serif;
   background: linear-gradient(135deg, #FF5733, #FFC300);
   display: flex;
   align-items: center;
