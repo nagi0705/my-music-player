@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import "./App.css";
 
 type Song = {
   title: string;
@@ -20,7 +21,6 @@ const songs: Song[] = [
     coverUrl: "/burning_heart.jpg",
     musicUrl: "/maou_08_burning_heart.mp3",
   },
-  // 他の曲データもここに追加
 ];
 
 function App() {
@@ -51,20 +51,22 @@ function App() {
   };
 
   return (
-    <div>
-      <div>
-        <img src={currentSong.coverUrl} alt="Cover" style={{ width: "300px", height: "300px" }} />
+    <div className="app-container flex items-center justify-center min-h-screen">
+      <div className="container">
+        <img
+          src={currentSong.coverUrl}
+          alt="Cover"
+          className="album-cover"
+        />
+        <h2 className="song-title">{currentSong.title}</h2>
+        <p className="song-artist">{currentSong.artist}</p>
+        <div className="controls">
+          <button onClick={handlePrevious}>⏪</button>
+          <button onClick={togglePlayPause}>{isPlaying ? "⏸" : "▶️"}</button>
+          <button onClick={handleNext}>⏩</button>
+        </div>
+        <audio ref={audioRef} src={currentSong.musicUrl} onEnded={handleNext} />
       </div>
-      <div>
-        <h2>{currentSong.title}</h2>
-        <p>{currentSong.artist}</p>
-      </div>
-      <div>
-        <button onClick={handlePrevious}>戻る</button>
-        <button onClick={togglePlayPause}>{isPlaying ? "一時停止" : "再生"}</button>
-        <button onClick={handleNext}>次へ</button>
-      </div>
-      <audio ref={audioRef} src={currentSong.musicUrl} onEnded={handleNext} />
     </div>
   );
 }
