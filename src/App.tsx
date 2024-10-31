@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import "./App.css";
+import { FaBackward, FaPlay, FaPause, FaForward } from "react-icons/fa";
 
 type Song = {
   title: string;
@@ -45,6 +46,36 @@ const songs: Song[] = [
     coverUrl: "/yuuzoranihabatakukokoro.jpeg",
     musicUrl: "/yuuzoranihabatakukokoro.mp3",
   },
+  {
+    title: "お地蔵様のいる小道",
+    artist: "甘茶の音楽工房",
+    coverUrl: "/ojizousamanoirukomichi.jpg",
+    musicUrl: "/ojizousamanoirukomichi.mp3",
+  },
+  {
+    title: "楽しい冒険",
+    artist: "甘茶の音楽工房",
+    coverUrl: "/tanoshiibouken.jpg",
+    musicUrl: "/tanoshiibouken.mp3",
+  },
+  {
+    title: "春への憧れ",
+    artist: "甘茶の音楽工房",
+    coverUrl: "/haruhenoakogare.jpg",
+    musicUrl: "/haruenoakogare_healing.mp3",
+  },
+  {
+    title: "クリスマス・コンチェルト",
+    artist: "甘茶の音楽工房",
+    coverUrl: "/christmasconcerto.jpg",
+    musicUrl: "/christmasconcerto.mp3",
+  },
+  {
+    title: "ミスト",
+    artist: "甘茶の音楽工房",
+    coverUrl: "/mist.jpeg",
+    musicUrl: "/mist.mp3",
+  },
 ];
 
 function App() {
@@ -85,9 +116,11 @@ function App() {
         <h2 className="song-title">{currentSong.title}</h2>
         <p className="song-artist">{currentSong.artist}</p>
         <div className="controls">
-          <button onClick={handlePrevious}>⏪</button>
-          <button onClick={togglePlayPause}>{isPlaying ? "⏸" : "▶️"}</button>
-          <button onClick={handleNext}>⏩</button>
+          <button onClick={handlePrevious}><FaBackward /></button>
+          <button onClick={togglePlayPause}>
+            {isPlaying ? <FaPause /> : <FaPlay />}
+          </button>
+          <button onClick={handleNext}><FaForward /></button>
         </div>
         <audio ref={audioRef} src={currentSong.musicUrl} onEnded={handleNext} />
       </div>

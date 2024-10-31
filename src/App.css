@@ -1,21 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+Australia+VIC+WA+NT+Hand+Dots&display=swap');
+
 body {
   margin: 0;
-  background: linear-gradient(135deg, #FF5733, #FFC300);
+  background: linear-gradient(135deg, #f0e6ff, #d4f1f4, #f5d6d8, #f0f5c6);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  font-family: 'Edu Australia VIC WA NT Hand Dots', sans-serif;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .container {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
   padding: 2rem;
-  backdrop-filter: blur(15px);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   width: 320px;
   text-align: center;
+  color: #ffffff;
+}
+
+.song-title {
+  font-size: 1.5rem;
   color: #001f3f;
+  margin: 0.5rem 0;
 }
 
 .song-artist {
@@ -25,19 +50,20 @@ body {
 }
 
 button {
-  background-color: rgba(255, 255, 255, 0.25);
-  color: #001f3f;
-  padding: 0.7rem 1.5rem;
-  border-radius: 0.5rem;
-  font-size: 1rem;
+  background: rgba(100, 100, 100, 0.3);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.3);
   border: none;
+  border-radius: 50%;
+  padding: 0.7rem 1.5rem;
+  color: #333;
+  font-size: 1.2rem;
   cursor: pointer;
-  margin: 0.5rem;
-  transition: background 0.3s;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 button:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+  background: rgba(173, 216, 230, 0.3);
+  transform: scale(1.05);
 }
 
 img.album-cover {
